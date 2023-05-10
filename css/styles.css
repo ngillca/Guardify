@@ -207,11 +207,37 @@ nav {
 
 /* Section Container */
 
+#section-header {
+  margin-left: 80px;
+}
 .section-container {
   display: flex;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.section-card {
+  display: flex;
   flex-direction: column;
-  margin: 10px;
-  border: 1px solid white;
+  border: 1px solid rgb(105, 103, 103);
+  padding: 20px;
+  margin: 20px;
+}
+
+.card-text {
+  font-display: flex;
+  flex: 1 0 auto;
+}
+
+.icon-container i {
+  text-align: center;
+  font-size: 2em;
+  padding-top: 20px;
+}
+.section-card h3 {
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  padding-bottom: 20px;
 }
 /* Animation */
 @keyframes animate {
@@ -291,12 +317,12 @@ nav {
     margin-top: 20px;
     font-size: 200px;
     border-left: 0.6px solid white;
-    border-radius: 5px;
+
     padding: 20px;
     align-self: flex-start;
   }
 
   .section-container {
-    margin-top: 10px;
+    flex-direction: column;
   }
 }
