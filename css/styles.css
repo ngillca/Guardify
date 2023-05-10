@@ -224,6 +224,13 @@ nav {
   margin: 20px;
 }
 
+.section-card h3 {
+  color: rgb(16, 87, 180);
+  font-size: 1.5em;
+  letter-spacing: 3px;
+  padding-bottom: 10px;
+}
+
 .card-text {
   font-display: flex;
   flex: 1 0 auto;
@@ -234,11 +241,7 @@ nav {
   font-size: 2em;
   padding-top: 20px;
 }
-.section-card h3 {
-  font-size: 1.3em;
-  letter-spacing: 1px;
-  padding-bottom: 20px;
-}
+
 /* Animation */
 @keyframes animate {
   0% {
@@ -324,5 +327,10 @@ nav {
 
   .section-container {
     flex-direction: column;
+    margin: 0 20px;
+  }
+
+  #section-header {
+    margin-left: 40px;
   }
 }
