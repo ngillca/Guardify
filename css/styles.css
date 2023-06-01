@@ -1,12 +1,3 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-} */
-
 @import url("https://fonts.googleapis.com/css?family=Exo:400,700");
 
 * {
@@ -28,11 +19,12 @@ body {
   font-size: 50px;
 }
 
+/* Backgroudn animation sourced via: https://alvarotrigo.com/blog/animated-backgrounds-css */
 .area {
   background: #000000;
   /* background: -webkit-linear-gradient(to left, #ffffff, #e073e6); */
   width: 100%;
-  height: 100vh;
+  height: 90vh;
 }
 
 .circles {
@@ -132,13 +124,21 @@ body {
 
 /* Navbar */
 nav {
+  position: fixed;
   display: block;
+  z-index: 900;
+  top: 0;
 }
 .nav-container {
+  position: sticky;
+  background-color: rgba(1, 1, 2, 0.774);
+  width: 100vw;
+  height: fit-content;
+
   display: flex;
   color: white;
   /* background-color: rgb(12, 12, 45); */
-  margin: 40px 10px;
+  /* margin: 40px 10px; */
   padding: 40px;
   z-index: 3;
 }
@@ -191,9 +191,10 @@ nav {
 }
 /* Header */
 .header-container {
+  overflow-x: hidden;
   display: flex;
   align-items: center;
-  margin: 60px;
+  margin: 180px 60px 10px 60px;
   max-width: 1000px;
   z-index: 3;
 }
@@ -232,7 +233,7 @@ nav {
 }
 
 .card-text {
-  font-display: flex;
+  rdisplay: flex;
   flex: 1 0 auto;
 }
 
@@ -244,21 +245,42 @@ nav {
 
 /* Our Mission Section */
 .our-mission {
-  background-color: rgb(16, 87, 180);
+  background-color: rgba(31, 30, 36, 0.61);
   color: white;
 
-  border: 1px solid rgb(16, 87, 180);
-  border-radius: 10px 100px;
+  border: 1px solid rgb(49, 49, 49);
+
   margin: 40px;
 }
 
 .mission-content {
   display: flex;
-  flex-direction: column;
+
   padding: 40px;
   gap: 30px;
 }
 
+.mission-content h1 {
+  margin: 50px auto;
+}
+
+.mission-content p {
+  font-size: 1.1rem;
+  word-spacing: 3px;
+  border: 1px solid rgb(95, 92, 92);
+  /* border-radius: 10px; */
+}
+
+.mission-info {
+  display: flex;
+  gap: 30px;
+}
+
+.mission-info p {
+  background-color: rgb(38, 47, 71);
+  padding: 20px;
+  color: rgb(255, 255, 255);
+}
 /* How it works */
 .how-it-works {
   background-color: rgb(18, 18, 19);
@@ -325,8 +347,8 @@ nav {
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
-  margin: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  margin: 100px auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
@@ -349,9 +371,50 @@ nav {
 
 /* Footer section */
 .footer-section {
-  font-size: 1.1em;
-  text-align: center;
-  padding: 30px;
+  margin-top: 100px;
+  height: 300px;
+  background-color: rgba(8, 8, 36, 0.774);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer-section a {
+  text-decoration: none;
+  color: #aaaaaa;
+}
+.footer-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 40px;
+}
+.footer-info ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* margin: 40px; */
+  gap: 10px;
+}
+
+.footer-info ul li {
+  list-style-type: none;
+  text-decoration: underline;
+  color: rgb(168, 166, 166);
+}
+.footer-info ul li i {
+  color: rgb(13, 75, 133);
+  font-size: 1.4em;
+}
+
+.footer-info i {
+  margin-right: 10px;
+}
+
+.footer-copyright {
+  align-self: center;
+}
+
+#mission {
 }
 /* Animation */
 @keyframes animate {
@@ -378,7 +441,7 @@ nav {
     padding-left: 40px;
   }
 }
-@media (max-width: 790px) {
+@media (max-width: 940px) {
   .nav-container h1 {
     /* flex: 3; */
     /* padding-right: 40px; */
@@ -392,7 +455,7 @@ nav {
 
   .hamburger.check {
     position: fixed;
-    text-align: right;
+    left: 80%;
   }
 
   .hamburger.active .bar:nth-child(2) {
@@ -408,11 +471,12 @@ nav {
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 30px;
+    top: 0;
+    padding: 20px 0px;
     gap: 0;
     display: flex;
     flex-direction: column;
-    background-color: rgba(16, 87, 180);
+    background-color: rgba(1, 1, 2, 0.774);
 
     width: 100%;
     text-align: center;
@@ -420,11 +484,22 @@ nav {
   }
   .nav-item {
     margin: 5px 0;
+    text-transform: uppercase;
+    font-weight: 700;
   }
 
   .nav-menu.active {
     left: 0;
   }
+
+  .title-header.active {
+    opacity: 0;
+  }
+
+  .nav-container.active {
+    background-color: rgba(20, 29, 41, 0);
+  }
+
   /* Header */
   .header-container {
     flex-direction: column;
@@ -449,5 +524,28 @@ nav {
 
   #section-header {
     margin-left: 40px;
+  }
+
+  .mission-content {
+    flex-direction: column;
+  }
+  .mission-content h1 {
+    text-align: center;
+    margin: 0;
+  }
+
+  .mission-info {
+    flex-direction: column;
+  }
+
+  .footer-info {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer-info ul {
+  }
+
+  .footer-section {
+    height: 380px;
   }
 }

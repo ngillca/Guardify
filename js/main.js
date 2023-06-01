@@ -1,6 +1,8 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const demoButton = document.querySelector("#demo");
+const title = document.querySelector(".title-header");
+const navContainer = document.querySelector(".nav-container");
 
 // Get the modal
 const modal = document.getElementById("myModal");
@@ -31,6 +33,10 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   hamburger.classList.toggle("check");
   navMenu.classList.toggle("active");
+
+  // navbar hiding
+  title.classList.toggle("active");
+  navContainer.classList.toggle("active");
 });
 
 document.querySelectorAll(".nav-link").forEach((n) => {
@@ -38,6 +44,9 @@ document.querySelectorAll(".nav-link").forEach((n) => {
     hamburger.classList.remove("active");
     hamburger.classList.remove("check");
     navMenu.classList.remove("active");
+    // navbar hiding
+    title.classList.remove("active");
+    navContainer.classList.remove("active");
   });
 });
 
